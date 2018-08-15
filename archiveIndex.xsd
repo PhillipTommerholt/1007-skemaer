@@ -2,7 +2,7 @@
 <!-- archiveIndex 0.9.6 -->
 <!-- Rigsarkivet 2019 -->
 <!-- Regarding the schema structure, the use of elements only and the intensive use of nested elements with multiple occurence elements is done to ease cooperation with various development tools -->
-<xs:schema xmlns="http://www.sa.dk/xmlns/diark/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sa.dk/xmlns/diark/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all" finalDefault="extension restriction" version="0.9.5" id="archiveIndex" xml:lang="en">
+<xs:schema xmlns="http://www.sa.dk/xmlns/diark/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sa.dk/xmlns/diark/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all" finalDefault="extension restriction" version="0.9.6" id="archiveIndex" xml:lang="en">
 	<xs:element name="archiveIndex">
 		<xs:complexType>
 			<xs:annotation>
@@ -42,15 +42,15 @@
 						<xs:documentation xml:lang="en">End date for the information package</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:sequence minOccurs="0" maxOccurs="1">
-					<xs:element name="documentPeriodStart" type="y_ym_ymdDatoType"  minOccurs="0">
+				<xs:sequence minOccurs="0">
+					<xs:element name="documentPeriodStart" type="y_ym_ymdDatoType" >
 					<xs:annotation>
 						<xs:documentation xml:lang="da">Startdato for dokumenter</xs:documentation>
 						<xs:documentation xml:lang="da">År, år-måned, år-måned-dag</xs:documentation>
 						<xs:documentation xml:lang="en">Start date for documents in the information package</xs:documentation>
 					</xs:annotation>
 					</xs:element>
-					<xs:element name="documentPeriodEnd" type="y_ym_ymdDatoType"  minOccurs="0">
+					<xs:element name="documentPeriodEnd" type="y_ym_ymdDatoType" >
 					<xs:annotation>
 						<xs:documentation xml:lang="da">Slutdato for dokumenter</xs:documentation>
 						<xs:documentation xml:lang="da">Anvendes til angivelse af slutdato for dokumenter</xs:documentation>
@@ -110,7 +110,7 @@
 						<xs:documentation xml:lang="da">Arkiveringsversioner med lukkede sager</xs:documentation>
 						<xs:documentation xml:lang="da">Angiver for it-systemer med dokumenter, at der er tale om et øjebliksbillede af metadata, men kun dokumenter fra lukkede sager. True=der er tale om et øjebliksbillede af metadata, men kun dokumenter fra lukkede sagers</xs:documentation>
 						<xs:documentation xml:lang="da">Boolsk værdi</xs:documentation>
-						<xs:documentation xml:lang="en">Metadata for open records</xs:documentation>
+						<xs:documentation xml:lang="en">Metadata also exists for cases and documents not submitted in information packagage</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="systemName" type="nonEmptyTextType">
@@ -157,6 +157,7 @@
 					<xs:annotation>
 						<xs:documentation xml:lang="da">Regionsnumre</xs:documentation>
 						<xs:documentation xml:lang="da">Standardidentifikatorer. Angivelse af, om der i systematisk form er registreret regionsnumre</xs:documentation>
+						<xs:documentation xml:lang="da">Boolsk værdi</xs:documentation>
 						<xs:documentation xml:lang="en">Standard identifier. Defines if the information package contains regionsnumre</xs:documentation>
 					</xs:annotation>
 				</xs:element>
@@ -164,20 +165,23 @@
 					<xs:annotation>
 						<xs:documentation xml:lang="da">Kommunenumre</xs:documentation>
 						<xs:documentation xml:lang="da">Standardidentifikatorer. Angivelse af, om der systematisk form er registreret kommunenumre</xs:documentation>
+						<xs:documentation xml:lang="da">Boolsk værdi</xs:documentation>
 						<xs:documentation xml:lang="en">Standard identifier. Defines if the information package contains kommunenumre</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="cprNum" type="xs:boolean">
 					<xs:annotation>
-						<xs:documentation xml:lang="da">CPRnumre</xs:documentation>
+						<xs:documentation xml:lang="da">CPR-numre</xs:documentation>
 						<xs:documentation xml:lang="da">Standardidentifikatorer. Angivelse af, om der i systematisk form er registreret CPR-nr.</xs:documentation>
+						<xs:documentation xml:lang="da">Boolsk værdi</xs:documentation>
 						<xs:documentation xml:lang="en">Standard identifier. Defines if the information package contains CPR-nr.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="cvrNum" type="xs:boolean">
 					<xs:annotation>
-						<xs:documentation xml:lang="da">CVRnumre</xs:documentation>
+						<xs:documentation xml:lang="da">CVR-numre</xs:documentation>
 						<xs:documentation xml:lang="da">Standardidentifikatorer. Angivelse af, om der i systematisk form er registreret CVR-nr.</xs:documentation>
+						<xs:documentation xml:lang="da">Boolsk værdi</xs:documentation>
 						<xs:documentation xml:lang="en">Standard identifier. Defines if the information package contains CVR-nr.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
@@ -185,6 +189,7 @@
 					<xs:annotation>
 						<xs:documentation xml:lang="da">Matrikelnumre</xs:documentation>
 						<xs:documentation xml:lang="da">Standardidentifikatorer. Angivelse af, om der i systematisk form er registreret Matrikelnumre</xs:documentation>
+						<xs:documentation xml:lang="da">Boolsk værdi</xs:documentation>
 						<xs:documentation xml:lang="en">Standard identifier. Defines if the information package contains Matrikelnumre</xs:documentation>
 					</xs:annotation>
 				</xs:element>
@@ -192,6 +197,7 @@
 					<xs:annotation>
 						<xs:documentation xml:lang="da">BBR-numre</xs:documentation>
 						<xs:documentation xml:lang="da">Standardidentifikatorer. Angivelse af, om der i systematisk form er registreret BBR-nr.</xs:documentation>
+						<xs:documentation xml:lang="da">Boolsk værdi</xs:documentation>
 						<xs:documentation xml:lang="en">Standard identifier. Defines if the information package contains BBR-nr.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
@@ -199,6 +205,7 @@
 					<xs:annotation>
 						<xs:documentation xml:lang="da">WHO-sygdomskoder</xs:documentation>
 						<xs:documentation xml:lang="da">Standardidentifikatorer. Angivelse af, om der i systematisk form er registreret WHOs sygdomskoder</xs:documentation>
+						<xs:documentation xml:lang="da">Boolsk værdi</xs:documentation>
 						<xs:documentation xml:lang="en">Standard identifier. Defines if the information package contains WHOs sygdomskoder</xs:documentation>
 					</xs:annotation>
 				</xs:element>
@@ -280,7 +287,7 @@
 				</xs:element>
 				<xs:element name="containsResearchData" type="xs:boolean">
 					<xs:annotation>
-						<xs:documentation xml:lang="da">Forskningsdata indholdt</xs:documentation>
+						<xs:documentation xml:lang="da">Forskningsdata indeholdt</xs:documentation>
 						<xs:documentation xml:lang="da">Angivelse af, om arkiveringsversionen indeholder forskningsdata</xs:documentation>
 						<xs:documentation xml:lang="da">Boolsk værdi</xs:documentation>
 						<xs:documentation xml:lang="en">Contains research data</xs:documentation>
@@ -299,7 +306,7 @@
 						<xs:documentation xml:lang="da">Kassation</xs:documentation>
 						<xs:documentation xml:lang="da">Angivelse af, om der er foretaget systematisk kassation af dokumenter inden produktion af arkiveringsversion</xs:documentation>
 						<xs:documentation xml:lang="da">Boolsk værdi</xs:documentation>
-						<xs:documentation xml:lang="en">documents disposal</xs:documentation>
+						<xs:documentation xml:lang="en">Documents disposal</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="searchRelatedOtherRecords" type="xs:boolean">
