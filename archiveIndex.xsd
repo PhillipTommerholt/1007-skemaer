@@ -2,7 +2,7 @@
 <!-- archiveIndex 0.9.6 -->
 <!-- Rigsarkivet 2019 -->
 <!-- Regarding the schema structure, the use of elements only and the intensive use of nested elements with multiple occurence elements is done to ease cooperation with various development tools -->
-<xs:schema xmlns="http://www.sa.dk/xmlns/diark/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sa.dk/xmlns/diark/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all" finalDefault="extension restriction" version="0.9.6" id="archiveIndex" xml:lang="en">
+<xs:schema xmlns="http://www.sa.dk/xmlns/diark/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sa.dk/xmlns/diark/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all" finalDefault="extension restriction" version="0.9.6	" id="archiveIndex" xml:lang="en">
 	<xs:element name="archiveIndex">
 		<xs:complexType>
 			<xs:annotation>
@@ -105,7 +105,7 @@
 						<xs:documentation xml:lang="en">information package period type</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="archiveTypeClosedFiles" type="xs:boolean" minOccurs="1">
+				<xs:element name="archiveTypeClosedFiles" type="xs:boolean" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation xml:lang="da">Arkiveringsversioner med lukkede sager</xs:documentation>
 						<xs:documentation xml:lang="da">Angiver for it-systemer med dokumenter, at der er tale om et øjebliksbillede af metadata, men kun dokumenter fra lukkede sager. True=der er tale om et øjebliksbillede af metadata, men kun dokumenter fra lukkede sagers</xs:documentation>
