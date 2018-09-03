@@ -108,6 +108,12 @@
 					<xs:documentation xml:lang="en">Other documentation</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="researchInformation" type="researchInformationType" id="_7" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="da">Dokumentation af forskningsdata</xs:documentation>
+					<xs:documentation xml:lang="en">Research documentation</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="systemInformationType">
@@ -271,6 +277,40 @@
 	<xs:complexType name="informationOtherType">
 		<xs:sequence>
 			<xs:element name="informationOther" type="xs:boolean" default="false" id="_6.a">
+				<xs:annotation>
+					<xs:documentation xml:lang="da">Andet</xs:documentation>
+					<xs:documentation xml:lang="en">Other</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="researchInformationType">
+		<xs:sequence>
+			<xs:element name="researchProjectDescription" type="xs:boolean" default="false" id="_7.a" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="da">Projektbeskrivelse gældende for de afleverede data</xs:documentation>
+					<xs:documentation xml:lang="en">Research project description for the submitted data</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="researchQuestionnaire" type="xs:boolean" default="false" id="_7.b" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="da">Spørgeskema, interviewguide og/eller registreringsskema anvendt til at indsamle og analysere afleverede data</xs:documentation>
+					<xs:documentation xml:lang="en">Questionnaire, interview guide, or registration form used to collect and analyze the submitted data</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="researchProtocol" type="xs:boolean" default="false" id="_7.c" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="da">Protokoller og metoderapporter</xs:documentation>
+					<xs:documentation xml:lang="en">Research protocol</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="researchPublication" type="xs:boolean" default="false" id="_7.d" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="da">Publikationer som er udgivet på basis af afleverede data</xs:documentation>
+					<xs:documentation xml:lang="en">Publications that stem from the submitted data</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="researchInformationOther" type="xs:boolean" default="false" id="_7.e" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation xml:lang="da">Andet</xs:documentation>
 					<xs:documentation xml:lang="en">Other</xs:documentation>
